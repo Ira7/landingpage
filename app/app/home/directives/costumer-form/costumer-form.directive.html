@@ -1,0 +1,68 @@
+<div class="container-fluid">
+   <div class="col-xs-12 heading">
+     gg
+   </div>
+   <div class="col-xs-12 col-md-7 page-text">
+    <ul>
+      <li class="list-text">יש לך עובדים ניידים הנמצאים מחוץ למשרד במרבית זמנם?</li>
+      <li class="list-text">מעוננין לחבר את עובדי הארגון למערכות המידע שלך?</li>
+      <li class="list-text">מעוניין לאפשר לעובדים לפעול בכל זמן ומכל מקום?</li>
+      <li class="list-text">מעוניין לחזק את הקשר עם הספקים ולקוחות בערוצים מודרניים?</li>
+      </ul>  
+   </div>
+   <div class="col-xs-12 col-md-5 page-form">
+      
+     <div class="col-xs-12 form-wrapper">
+       <div class="col-xs-12"><label>מלא את הפרטים הבאים</label></div>
+       <ng-form name="myForm"> 
+    <div class="form-group col-xs-6">
+        <!--<label for="firstName" class="">שם פרטי</label>-->
+        <input ng-model="vm.data.firstName" name="firstName" required  type="text" class="form-control" placeholder="שם פרטי">
+    </div>
+    <div class="form-group col-xs-6">
+        <!--<label for="lastName" class="">שם משפחה</label>-->
+        <input  ng-model="vm.data.lastName" name="lastName" required  type="text" class="form-control" placeholder="שם משפחה">
+    </div>
+    <div class="form-group col-xs-12">
+        <!--<label for="company" class="">חברה</label>-->
+        <input  ng-model="vm.data.company" name="company" required  type="text" class="form-control" placeholder="חברה">
+    </div>
+     <div class="form-group col-xs-12">
+        <!--<label for="rolr" class="">תפקיד</label>-->
+        <input  ng-model="vm.data.role" name="role" required  type="text" class="form-control" placeholder="תפקיד">
+    </div>
+     <div class="form-group col-xs-12">
+        <!--<label for="email" class="">כתובת דוא"ל</label>-->
+        <input  ng-model="vm.data.email" name="email" required  type="text" class="form-control" placeholder="כתובת דואר אלקטרוני">
+    </div>
+     <div class="form-group col-xs-12">
+        <!--<label for="phone" class="">מספר טלפון</label>-->
+        <input  ng-model="vm.data.phone" name="phone" required  type="num" class="form-control" placeholder="מספר טלפון">
+    </div>
+    <div class="form-group col-xs-12">
+      <div><label>נשמח לסייע בשירותים הבאים</label></div>
+      <label class="checkbox-inline"><input type="checkbox" value="">אפליקציות היברידיות</label>
+<label class="checkbox-inline"><input type="checkbox" value="">אתר רספונסיבי</label>
+    </div>
+    <div class="form-group col-xs-12">
+      <div><label>נשמח לתת לך את ההטבה הבאה</label></div>
+      <div class="radio">
+       <label><input type="radio" ng-model="vm.data.promo" value="1">פגישה עם ארכיטקט פתרונות XRM </label>
+        </div>
+        <div class="radio">
+         <label><input type="radio" ng-model="vm.data.promo" value="2">ייעוץ UX/UI (עד 9 שעות) </label>
+        </div>    
+        <div class="radio">       
+           <label><input type="radio" ng-model="vm.data.promo" value="3"> הערכת מצב קיים של מערכות האירגון אל מול פתרונות המובייל</label>
+    </div>
+    
+    </div>
+    
+      <div class="form-group col-xs-12">
+        <button ng-disabled="myForm.firstName.$error.required || myForm.lastName.$error.required || myForm.company.$error.required || myForm.role.$error.required || myForm.email.$error.required || myForm.phone.$error.required" class="btn btn-lg btn-primary col-xs-12"   ng-click="vm.submitForm()">שלח</button>
+  </div>
+   </ng-form>
+   </div>
+   </div>
+   <dic class="col-xs-12 page-footer"></div>
+</div>
