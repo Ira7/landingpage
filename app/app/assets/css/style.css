@@ -10,19 +10,133 @@ body {
 }
 
 body{
-    background-color: rgba(51, 122, 183, 0.49);;
+     background: url('../imgs/Back960.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
+.nopadding{
+    padding: 0;
+}
 
+.height100{
+     height: 100%;
+}
+
+.heading{
+    height: 5em;
+}
+
+.heading-text{
+    font-size: 2em;
+    text-align: center;
+      /*color: #2aa9e0;*/
+      color:white;
+}
+
+.middle-text{
+     font-size: 1.2em;
+    text-align: center;
+      color:white;
+}
+
+.padding-top{
+    padding-top:5%;
+}
+
+.prod-logo{
+    height: 50px;
+    width:180px;
+}
 
 .form-wrapper{
-    background-color: rgba(255, 255, 255, 0.46);
-    border: 2px solid white;
+  padding-top:2%;
+  /*background-color: #2aa9e0;*/
+  margin: 2%;
+   background-color:rgba(255, 255, 255, 0.66);
+   border: 2px solid white;
+   border-radius: 1%;
 }
 
+.btn-landing{
+     background: #2aa9e0;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+.page-text{
+ background: url('../imgs/Back960.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+   height: 100%;
+   float: left;
+}
 
-
-.list-text{
-    font-size: 1.3em;
+.prod-logo{
     padding: 2%;
 }
+.list-text{
+    font-size: 1em;
+    padding: 0.5%;
+    /*color: #2aa9e0;*/
+  
+}
+
+.underline{
+    height: 30px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    border:none;
+    border-bottom: 1px solid #ccc;
+    width: 100%;
+}
+
+.label-head{
+    font-size: 1.2em;
+    font-weight: normal !important;
+}
+
+.row.content {height: 1500px;}
+  .sidenav {
+      background-color: white;
+      /*background-color: rgba(255, 255, 255, 0.25);*/
+      height: 100%;
+      position: fixed;
+        /*background: url('../imgs/Back960.png') no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;*/
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+         position:relative;
+      }
+      .row.content {height: auto;}
+    }

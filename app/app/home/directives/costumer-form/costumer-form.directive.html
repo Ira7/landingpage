@@ -1,68 +1,107 @@
 <div class="container-fluid">
-   <div class="col-xs-12 heading">
-     gg
-   </div>
-   <div class="col-xs-12 col-md-7 page-text">
-    <ul>
-      <li class="list-text">יש לך עובדים ניידים הנמצאים מחוץ למשרד במרבית זמנם?</li>
-      <li class="list-text">מעוננין לחבר את עובדי הארגון למערכות המידע שלך?</li>
-      <li class="list-text">מעוניין לאפשר לעובדים לפעול בכל זמן ומכל מקום?</li>
-      <li class="list-text">מעוניין לחזק את הקשר עם הספקים ולקוחות בערוצים מודרניים?</li>
-      </ul>  
-   </div>
-   <div class="col-xs-12 col-md-5 page-form">
-      
-     <div class="col-xs-12 form-wrapper">
-       <div class="col-xs-12"><label>מלא את הפרטים הבאים</label></div>
-       <ng-form name="myForm"> 
-    <div class="form-group col-xs-6">
-        <!--<label for="firstName" class="">שם פרטי</label>-->
-        <input ng-model="vm.data.firstName" name="firstName" required  type="text" class="form-control" placeholder="שם פרטי">
-    </div>
-    <div class="form-group col-xs-6">
-        <!--<label for="lastName" class="">שם משפחה</label>-->
-        <input  ng-model="vm.data.lastName" name="lastName" required  type="text" class="form-control" placeholder="שם משפחה">
-    </div>
-    <div class="form-group col-xs-12">
-        <!--<label for="company" class="">חברה</label>-->
-        <input  ng-model="vm.data.company" name="company" required  type="text" class="form-control" placeholder="חברה">
-    </div>
-     <div class="form-group col-xs-12">
-        <!--<label for="rolr" class="">תפקיד</label>-->
-        <input  ng-model="vm.data.role" name="role" required  type="text" class="form-control" placeholder="תפקיד">
-    </div>
-     <div class="form-group col-xs-12">
-        <!--<label for="email" class="">כתובת דוא"ל</label>-->
-        <input  ng-model="vm.data.email" name="email" required  type="text" class="form-control" placeholder="כתובת דואר אלקטרוני">
-    </div>
-     <div class="form-group col-xs-12">
-        <!--<label for="phone" class="">מספר טלפון</label>-->
-        <input  ng-model="vm.data.phone" name="phone" required  type="num" class="form-control" placeholder="מספר טלפון">
-    </div>
-    <div class="form-group col-xs-12">
-      <div><label>נשמח לסייע בשירותים הבאים</label></div>
-      <label class="checkbox-inline"><input type="checkbox" value="">אפליקציות היברידיות</label>
-<label class="checkbox-inline"><input type="checkbox" value="">אתר רספונסיבי</label>
-    </div>
-    <div class="form-group col-xs-12">
-      <div><label>נשמח לתת לך את ההטבה הבאה</label></div>
-      <div class="radio">
-       <label><input type="radio" ng-model="vm.data.promo" value="1">פגישה עם ארכיטקט פתרונות XRM </label>
+    <div class="row content">
+        <div class="col-xs-12 col-sm-8 page-text">
+            <!--<div class="row">
+                <div class="col-xs-4 pull-left prod-logo">
+                    <img src=".\assets\imgs\logo-grand-prodware.png" class="img-responsive pull-left logo-img" alt="logo">
+                </div>
+            </div>-->
+            <div class="row padding-top">
+                <!--<p class="heading-text">Prodware שותפת הזהב של Microsofrt מצטיינת בפתרונות IT למשרדי ממשלה</p>-->
+                <p class="heading-text">Prodware שותפת הזהב של Microsofrt</p>
+                <p class="heading-text">מצטיינת בפתרונות IT למשרדי ממשלה</p>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-3 col-sm-offset-3">
+                    <ul>
+                        <li class="list-text">ניהול ובקרת פרוייקטים</li>
+                        <li class="list-text">מערכת פניות ציבור</li>
+                        <!--<li class="list-text">הנגשת אתרי ממשלה</li>-->
+                       
+                    </ul>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <ul>
+                        <li class="list-text">מערכת לאישור פניות הציבור</li>
+                        <li class="list-text">מערכת לניהול משאבי אנוש</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="row">
+                <p class="middle-text">הדרכות יישום, פיתוח ומגוון פתרונות</p>
+                <p class="middle-text">Dynamics 365 xRM, Power BI, Angular 2.0</p>
+            </div>
+            <!--<div class="row">
+                <img src=".\assets\imgs\desk500.png" class="img-responsive pull-left logo-img" alt="logo">
+            </div>-->
         </div>
-        <div class="radio">
-         <label><input type="radio" ng-model="vm.data.promo" value="2">ייעוץ UX/UI (עד 9 שעות) </label>
-        </div>    
-        <div class="radio">       
-           <label><input type="radio" ng-model="vm.data.promo" value="3"> הערכת מצב קיים של מערכות האירגון אל מול פתרונות המובייל</label>
+        <div class="col-xs-12 col-sm-4 sidenav">
+            <div class="row">
+                <div class="col-xs-4 pull-right prod-logo">
+                    <img src=".\assets\imgs\logo-grand-prodware.png" class="img-responsive pull-left logo-img" alt="logo">
+                </div>
+            </div>
+            <div class="row form-wrapper">
+                <div class="col-xs-12">
+                          <div><label class="label-head">נשמח לשמוע ולענות על כל שאלה</label></div>
+                      </div>
+                <ng-form name="myForm">
+                      
+                    <div class="form-group col-xs-6">
+                        <!--<label for="firstName" class="">שם פרטי</label>-->
+                        <input ng-model="vm.data.firstName" name="firstName" required type="text" class="underline" placeholder="שם פרטי">
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <!--<label for="lastName" class="">שם משפחה</label>-->
+                        <input ng-model="vm.data.lastName" name="lastName" required type="text" class="underline" placeholder="שם משפחה">
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <!--<label for="company" class="">חברה</label>-->
+                        <input ng-model="vm.data.company" name="company" required type="text" class="underline" placeholder="שם הארגון">
+                    </div>
+                    <div class="form-group col-xs-6">
+                        <!--<label for="rolr" class="">תפקיד</label>-->
+                        <input ng-model="vm.data.role" name="role" required type="text" class="underline" placeholder="תפקיד">
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <!--<label for="email" class="">כתובת דוא"ל</label>-->
+                        <input ng-model="vm.data.email" name="email" required type="text" class="underline" placeholder="כתובת דואר אלקטרוני">
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <!--<label for="phone" class="">מספר טלפון</label>-->
+                        <input ng-model="vm.data.phone" name="phone" required type="num" class="underline" placeholder="טלפון נייד">
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <div><label class="label-head">נשמח לסייע בשירותים הבאים</label></div>
+                         <label class="checkbox-inline"><input type="checkbox" value="">פתרונות xRM מובנים</label>
+                         
+                         <label class="checkbox-inline"><input type="checkbox" value="">xRM Academy</label>
+                       </div>
+                        <div class="form-group col-xs-12">
+                        <label class="checkbox-inline"><input type="checkbox" value="">אפליקציות היברידיות</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="">אתר רספונסיבי</label>
+                       </div>
+                       <div class="form-group col-xs-12">
+                        <label class="checkbox-inline"><input type="checkbox" value="">הנגשת האתר Make Sense</label>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <div><label class="label-head">נשמח לתת לך את ההטבה הבאה</label></div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="vm.data.promo" value="1">פגישה עם ארכיטקט פתרונות XRM </label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="vm.data.promo" value="2">ייעוץ UX/UI (עד 9 שעות) </label>
+                        </div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="vm.data.promo" value="3"> הערכת מצב קיים של מערכות האירגון אל מול פתרונות המובייל</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12">
+                        <button ng-disabled="myForm.firstName.$error.required || myForm.lastName.$error.required || myForm.company.$error.required || myForm.role.$error.required || myForm.email.$error.required || myForm.phone.$error.required"
+                            class="btn btn-lg btn-landing col-xs-12" ng-click="vm.submitForm()">בואו ניפגש</button>
+                    </div>
+                </ng-form>
+            </div>
+        </div>
     </div>
-    
-    </div>
-    
-      <div class="form-group col-xs-12">
-        <button ng-disabled="myForm.firstName.$error.required || myForm.lastName.$error.required || myForm.company.$error.required || myForm.role.$error.required || myForm.email.$error.required || myForm.phone.$error.required" class="btn btn-lg btn-primary col-xs-12"   ng-click="vm.submitForm()">שלח</button>
-  </div>
-   </ng-form>
-   </div>
-   </div>
-   <dic class="col-xs-12 page-footer"></div>
 </div>
