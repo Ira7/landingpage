@@ -38,16 +38,32 @@ module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
+        yeoman: {
+            // configurable paths
+            app: 'app',
+            dist: 'dist'
+        },
         connect: {
             main: {
                 options: {
-                    port: 9000,
+                    hostname: '0.0.0.0',
+                    livereload: false,
                     open: {
                         target: 'http://localhost:9000/app',
                         appName: 'Chrome'
+                    },
+                    port: 9000,
+                    useAvailablePort: true,
+                    base: '.',
+                    logger: 'dev',
+                    middleware: function (connect, options, middlewares) {
+                        middlewares.unshift(require('grunt-connect-proxy/lib/utils').proxyRequest);
+                        return middlewares;
                     }
                 }
+
             }
+
         },
         watch: {
             main: {
@@ -56,7 +72,7 @@ module.exports = function (grunt) {
                     livereloadOnError: false,
                     spawn: false
                 },
-                files: [createFolderGlobs(['*.js', '*.less', '*.html']), '!_SpecRunner.html', '!.grunt'],
+                files: [createFolderGlobs(['*.js', '*.less', '*.css', '*.html']), '!_SpecRunner.html', '!.grunt'],
                 tasks: [] //all the tasks are run dynamically during the watch event handler
             }
         },
@@ -66,8 +82,7 @@ module.exports = function (grunt) {
                     jshintrc: '.jshintrc',
                     reporter: require('jshint-stylish')
                 },
-                src: createFolderGlobs(['*.js', '*-spec.js']),
-                target: ['file.js']
+                src: createFolderGlobs('app/**/*.js')
             }
         },
         clean: {
@@ -90,9 +105,9 @@ module.exports = function (grunt) {
             main: {
                 options: {
                     module: pkg.name,
-                    htmlmin: '<%= htmlmin.main.options %>',
                     url: function (url) {
-                        return url.replace('app/', '');
+                        var result = url.replace('app/', '');
+                        return result;
                     }
                 },
                 src: [createFolderGlobs('*.html'), '!app/index.html', '!_SpecRunner.html'],
@@ -104,12 +119,28 @@ module.exports = function (grunt) {
                 files: [
                     {
                         cwd: 'app',
-                        src: ['assets/**/*'],
-                        dest: 'dist/',
+                        src: ['assets/favicon/**/*', 'assets/fonts/**/*', 'assets/imgs/**/*'],
+                        dest: 'dist/app/',
+                        expand: true
+                    },
+                    {
+                        cwd: 'data',
+                        src: ['**/*'],
+                        dest: 'dist/app/data',
+                        expand: true
+                    },
+                    {
+                        cwd: 'app',
+                        src: ['config.js', 'browserconfig.xml', 'manifest.json', 'favicon.ico'],
+                        dest: 'dist/app/',
+                        expand: true
+                    },
+                    {
+                        cwd: 'dist',
+                        src: ['app.full.min.css'],
+                        dest: 'dist/app/assets/css/',
                         expand: true
                     }
-                    /*{src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true},
-                    {src: ['bower_components/bootstrap/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}*/
                 ]
             }
         },
@@ -126,7 +157,8 @@ module.exports = function (grunt) {
                         {
                             selector: 'link[rel="stylesheet"][data-concat!="false"]',
                             attribute: 'href',
-                            writeto: 'appcss'
+                            writeto: 'appcss',
+                            isPath: true
                         }
                     ]
                 },
@@ -138,22 +170,22 @@ module.exports = function (grunt) {
                     append: [
                         {
                             selector: 'body',
-                            html: '<script src="app.full.min.js"></script>'
+                            html: '<script src="app.full.min.js"></script><script src="config.js"></script>'
                         },
                         {
                             selector: 'head',
-                            html: '<link rel="stylesheet" href="app.full.min.css">'
+                            html: '<link href="favicon.ico" rel="shortcut icon"><link rel="stylesheet" href="assets/css/app.full.min.css">'
                         }
                     ]
                 },
                 src: 'app/index.html',
-                dest: 'dist/index.html'
+                dest: 'dist/app/index.html'
             }
         },
         cssmin: {
             main: {
                 src: ['temp/app.css', '<%= dom_munger.data.appcss %>'],
-                dest: 'dist/app.full.min.css'
+                dest: 'dist/app/assets/css/app.full.min.css'
             }
         },
         concat: {
@@ -166,12 +198,17 @@ module.exports = function (grunt) {
             main: {
                 src: 'temp/app.full.js',
                 dest: 'temp/app.full.js'
+            },
+            check: {
+                /* TODO: remove check and re-add ugligy to build task */
+                src: 'temp/app.full.js',
+                dest: 'dist/app/app.full.min.js'
             }
         },
         uglify: {
             main: {
                 src: 'temp/app.full.js',
-                dest: 'dist/app.full.min.js'
+                dest: 'dist/app/app.full.min.js'
             }
         },
         htmlmin: {
@@ -186,53 +223,42 @@ module.exports = function (grunt) {
                     removeStyleLinkTypeAttributes: true
                 },
                 files: {
-                    'dist/index.html': 'dist/index.html'
+                    'dist/app/index.html': 'dist/app/index.html'
                 }
             }
         },
-
-        //Imagemin has issues on Windows.
-        //To enable imagemin:
-        // - "npm install grunt-contrib-imagemin"
-        // - Comment in this section
-        // - Add the "imagemin" task after the "htmlmin" task in the build task alias
-        //imagemin: {
-        //  main:{
-        //    files: [{
-        //      expand: true, cwd:'dist/',
-        //      src:['**/{*.png,*.jpg}'],
-        //      dest: 'dist/'
-        //    }]
-        //  }
-        //},
+        version: {
+            project: {
+                src: ['package.json', 'bower.json', '<%= yeoman.app %>/config.js']
+            }
+        },
 
         /**
          * The Karma configurations.
          */
         karma: {
             options: {
-                frameworks: ['jasmine'],
+                configFile: 'test/karma.conf.js',
                 files: [ //this files data is also updated in the watch handler, if updated change there too
                     '<%= dom_munger.data.appjs %>',
+                    '<%= yeoman.app %>/config.js',
                     'bower_components/angular-mocks/angular-mocks.js',
-                    createFolderGlobs('*-spec.js')
+                    'bower_components/commangular/dist/commangular.js',
+                    'bower_components/commangular/src/commangular-mock/commangular-mock.js',
+                    createFolderGlobs('app/**/*-spec.js'),
+                    createFolderGlobs('app/**/*.html'),
+                    createFolderGlobs('data/**/*.json')
                 ],
-                logLevel: 'ERROR',
-                reporters: ['mocha'],
                 autoWatch: false, //watching is handled by grunt-contrib-watch
-                singleRun: true
+                singleRun: true, // change to false if you want to debug unit tests
             },
             all_tests: {
-                browsers: ['PhantomJS', 'Chrome']
+                browsers: ['Chrome']
             },
             during_watch: {
-                browsers: ['PhantomJS']
+                browsers: ['Chrome']
             },
         },
-
-        /**
-         * Protractor configuration
-         */
         protractor: {
             e2e: {
                 options: {
@@ -246,7 +272,8 @@ module.exports = function (grunt) {
 
     });
 
-    grunt.registerTask('build', ['jshint', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
+     grunt.registerTask('build', [ 'jshint', 'clean:before', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'copy', 'htmlmin', 'clean:after']);
+    //grunt.registerTask('build', ['jshint', 'clean:before', 'less', 'dom_munger', 'ngtemplates', 'cssmin', 'concat', 'ngAnnotate', 'uglify', 'copy', 'htmlmin', 'clean:after']);
     grunt.registerTask('run', ['dom_munger:read', 'jshint', 'connect', 'watch']);
     grunt.registerTask('test', ['dom_munger:read', 'karma']);
     grunt.registerTask('e2e', ['dom_munger:read', 'protractor']);

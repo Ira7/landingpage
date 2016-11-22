@@ -32,10 +32,11 @@
 
 
             function _SentEmail() {
-                var url = 'http://aviel.com';
+                var url = 'http://pw-conference-api.azurewebsites.net/sendemail';
                 var data = vm.data;
+                var header = 'Content-Type: application/json';
 
-                dataService.post(url, data)
+                dataService.post(url, data, header)
                     .then(function () {
                         console.log('success');
                         vm.data = {
