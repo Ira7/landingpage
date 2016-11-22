@@ -23,27 +23,13 @@
                 "phone": "",
                 "promo": "",
                 "role": "",
-                "xrm": false,
-                "academy": false,
-                "hybridApp": false,
-                "responsiveApp": false,
-                "makeSense": false
+                "xrm": "",
+                "academy": "",
+                "hybridApp": "",
+                "responsiveApp": "",
+                "makeSense": ""
             };
 
-            function _setServices(service) {
-                switch (service) {
-                    case "xrm": vm.data[service] = !vm.data[service];
-                        break;
-                    case "academy": vm.data[service] = !vm.data[service];
-                        break;
-                    case "hybridApp": vm.data[service] = !vm.data[service];
-                        break;
-                    case "responsiveApp": vm.data[service] = !vm.data[service];
-                        break;
-                    case "makeSense": vm.data[service] = !vm.data[service];
-                        break;
-                }
-            }
 
             function _SentEmail() {
                 var url = 'http://aviel.com';
@@ -60,11 +46,11 @@
                             "phone": "",
                             "promo": "",
                             "role": "",
-                            "xrm": false,
-                            "academy": false,
-                            "hybridApp": false,
-                            "responsiveApp": false,
-                            "makeSense": false
+                            "xrm": "",
+                            "academy": "",
+                            "hybridApp": "",
+                            "responsiveApp": "",
+                            "makeSense": ""
                         };
                     }, function failure() {
                         console.log('failure');
@@ -72,7 +58,6 @@
             }
 
             vm.submitForm = _SentEmail;
-            vm.setServices = _setServices;
 
 
             function _init() {
