@@ -79,16 +79,18 @@
                     </div>
                     <div class="form-group col-xs-12 costum-color">
                         <div><label class="label-head">נשמח לסייע בשירותים הבאים</label></div>
-                        <label class="checkbox-inline"><input type="checkbox" value="">פתרונות xRM מובנים</label>
 
-                        <label class="checkbox-inline"><input type="checkbox" value="">xRM Academy</label>
-                    </div>
-                    <div class="form-group col-xs-12">
-                        <label class="checkbox-inline"><input type="checkbox" value="">אפליקציות היברידיות</label>
-                        <label class="checkbox-inline"><input type="checkbox" value="">אתר רספונסיבי</label>
-                    </div>
-                    <div class="form-group col-xs-12">
-                        <label class="checkbox-inline"><input type="checkbox" value="">הנגשת האתר Make Sense</label>
+                         <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.xrm" ng-true-value="'פתרונות xRM מובנים'"  ng-false-value="''">פתרונות xRM מובנים</label>
+                         
+                         <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.academy" ng-true-value="'xRM Academy'"  ng-false-value="''">xRM Academy</label>
+                       </div>
+                        <div class="form-group col-xs-12">
+                        <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.hybridApp" ng-true-value="'אפליקציות היברידיות'"  ng-false-value="''">אפליקציות היברידיות</label>
+                        <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.responsiveApp" ng-true-value="'אתר רספונסיבי'"  ng-false-value="''">אתר רספונסיבי</label>
+                       </div>
+                       <div class="form-group col-xs-12">
+                        <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.makeSense" ng-true-value="'הנגשת האתר Make Sense'"  ng-false-value="''">הנגשת האתר Make Sense</label>
+
                     </div>
                     <div class="form-group col-xs-12">
                         <div><label class="label-head">נשמח לתת לך את ההטבה הבאה</label></div>
