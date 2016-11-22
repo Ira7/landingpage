@@ -1,11 +1,11 @@
 (function () {
     'use strict';
 
-    angular.module('y', ['common', 'shell', 'home', 'help', 'auth', 'nav', 'sidenav']);
+    angular.module('app', ['common', 'shell', 'home', 'help', 'auth', 'nav', 'sidenav']);
 
     // CONFIG: App (module)
     angular
-        .module('y')
+        .module('app')
         .config(function ($stateProvider, $httpProvider, localStorageServiceProvider, logExProvider, cfpLoadingBarProvider) {
 
 
@@ -44,7 +44,7 @@
 
     // RUN: App (module)
     angular
-        .module('y')
+        .module('app')
         .run(function ($log, $rootScope) {
             
             $log = $log.getInstance('app', true);
