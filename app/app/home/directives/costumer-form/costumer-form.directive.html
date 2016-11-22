@@ -12,13 +12,13 @@
                 <p class="heading-text">מצטיינת בפתרונות IT למשרדי ממשלה</p>
             </div>
             <div class="row">
-                 <p class="label-head-center">פתרונות טכנולוגיים לשימוש מיידי במשרדי ממשלה</p>
+                <p class="label-head-center">פתרונות טכנולוגיים לשימוש מיידי במשרדי ממשלה</p>
                 <div class="col-xs-12 col-sm-3 col-sm-offset-3">
                     <ul>
                         <li class="list-text">ניהול ובקרת פרוייקטים</li>
                         <li class="list-text">מערכת פניות ציבור</li>
                         <!--<li class="list-text">הנגשת אתרי ממשלה</li>-->
-                       
+
                     </ul>
                 </div>
                 <div class="col-xs-12 col-sm-4">
@@ -29,8 +29,8 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-4 col-xs-offset-4">
-                     <img src=".\assets\imgs\clouds.png" class="img-responsive" alt="img">
+                <div class="col-xs-6 col-xs-offset-3">
+                    <img src=".\assets\imgs\clouds.png" class="img-responsive" alt="img">
                 </div>
             </div>
             <div class="row">
@@ -49,10 +49,10 @@
             </div>
             <div class="row form-wrapper">
                 <div class="col-xs-12">
-                          <div><label class="label-head">נשמח לשמוע ולענות על כל שאלה</label></div>
-                      </div>
+                    <div><label class="label-head">נשמח לשמוע ולענות על כל שאלה</label></div>
+                </div>
                 <ng-form name="myForm">
-                      
+
                     <div class="form-group col-xs-6">
                         <!--<label for="firstName" class="">שם פרטי</label>-->
                         <input ng-model="vm.data.firstName" name="firstName" required type="text" class="underline" placeholder="שם פרטי">
@@ -77,8 +77,9 @@
                         <!--<label for="phone" class="">מספר טלפון</label>-->
                         <input ng-model="vm.data.phone" name="phone" required type="num" class="underline" placeholder="טלפון נייד">
                     </div>
-                    <div class="form-group col-xs-12">
+                    <div class="form-group col-xs-12 costum-color">
                         <div><label class="label-head">נשמח לסייע בשירותים הבאים</label></div>
+
                          <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.xrm" ng-true-value="'פתרונות xRM מובנים'"  ng-false-value="''">פתרונות xRM מובנים</label>
                          
                          <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.academy" ng-true-value="'xRM Academy'"  ng-false-value="''">xRM Academy</label>
@@ -89,6 +90,7 @@
                        </div>
                        <div class="form-group col-xs-12">
                         <label class="checkbox-inline"><input type="checkbox" value="" ng-model="vm.data.makeSense" ng-true-value="'הנגשת האתר Make Sense'"  ng-false-value="''">הנגשת האתר Make Sense</label>
+
                     </div>
                     <div class="form-group col-xs-12">
                         <div><label class="label-head">נשמח לתת לך את ההטבה הבאה</label></div>
@@ -101,6 +103,10 @@
                         <div class="radio">
                             <label><input type="radio" ng-model="vm.data.promo" value="3"> הערכת מצב קיים של מערכות האירגון אל מול פתרונות המובייל</label>
                         </div>
+                        <div class="radio">
+                            <label><input type="radio" ng-model="vm.data.promo" value="4"> %15 הנחה על קורסי האקדמיה</label>
+                        </div>
+
                     </div>
                     <div class="form-group col-xs-12">
                         <button ng-disabled="myForm.firstName.$error.required || myForm.lastName.$error.required || myForm.company.$error.required || myForm.role.$error.required || myForm.email.$error.required || myForm.phone.$error.required"
