@@ -6,20 +6,35 @@
     /**
      * CostumerForm Object/function
      */
+
     function CostumerForm() {
 
 
-        function CostumerFormController() {
+        function CostumerFormController(dataService) {
 
             var vm = this;
             vm.name = 'CostumerFormController';
 
             vm.data = {
                 
-            }
+            };
 
 
-            vm.changeState = _changeState;
+        function _SentEmail(){
+            var url = '';
+            var data = vm.data;
+            dataService.post(url,data)
+                .then(function(){
+                    console.log('success');
+                    vm.data = {
+
+                    };
+                }, function failure(){
+                    console.log('failure');
+                });
+        }
+
+         vm.submitForm = _SentEmail;
 
 
             function _init() {
@@ -30,7 +45,7 @@
 
         }
 
-    }
+    
 
 
     /***************** PRIVATE *******************/
@@ -53,12 +68,11 @@
     };
 
     return directive;
+   }  
 
-}
 
     /* ANGULAR */
-    angular
-    .module('home')
-    .directive('costumerForm', CostumerForm);
+    angular.module('home')
+        .directive('costumerForm', CostumerForm);
 
 })();

@@ -33,6 +33,9 @@ module.exports = function (grunt) {
     // load all grunt tasks
     require('load-grunt-tasks')(grunt);
 
+    grunt.loadNpmTasks('grunt-contrib-jshint');
+    grunt.registerTask('default', ['jshint']);
+
     // Project configuration.
     grunt.initConfig({
         connect: {
@@ -60,9 +63,11 @@ module.exports = function (grunt) {
         jshint: {
             main: {
                 options: {
-                    jshintrc: '.jshintrc'
+                    jshintrc: '.jshintrc',
+                    reporter: require('jshint-stylish')
                 },
-                src: createFolderGlobs(['*.js', '*-spec.js'])
+                src: createFolderGlobs(['*.js', '*-spec.js']),
+                target: ['file.js']
             }
         },
         clean: {
@@ -103,9 +108,9 @@ module.exports = function (grunt) {
                         dest: 'dist/',
                         expand: true
                     }
-          /*{src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true},
-          {src: ['bower_components/bootstrap/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}*/
-        ]
+                    /*{src: ['bower_components/font-awesome/fonts/**'], dest: 'dist/',filter:'isFile',expand:true},
+                    {src: ['bower_components/bootstrap/fonts/**'], dest: 'dist/',filter:'isFile',expand:true}*/
+                ]
             }
         },
         dom_munger: {
@@ -123,7 +128,7 @@ module.exports = function (grunt) {
                             attribute: 'href',
                             writeto: 'appcss'
                         }
-          ]
+                    ]
                 },
                 src: 'app/index.html'
             },
@@ -139,7 +144,7 @@ module.exports = function (grunt) {
                             selector: 'head',
                             html: '<link rel="stylesheet" href="app.full.min.css">'
                         }
-          ]
+                    ]
                 },
                 src: 'app/index.html',
                 dest: 'dist/index.html'
@@ -208,10 +213,10 @@ module.exports = function (grunt) {
             options: {
                 frameworks: ['jasmine'],
                 files: [ //this files data is also updated in the watch handler, if updated change there too
-          '<%= dom_munger.data.appjs %>',
-          'bower_components/angular-mocks/angular-mocks.js',
-          createFolderGlobs('*-spec.js')
-        ],
+                    '<%= dom_munger.data.appjs %>',
+                    'bower_components/angular-mocks/angular-mocks.js',
+                    createFolderGlobs('*-spec.js')
+                ],
                 logLevel: 'ERROR',
                 reporters: ['mocha'],
                 autoWatch: false, //watching is handled by grunt-contrib-watch
