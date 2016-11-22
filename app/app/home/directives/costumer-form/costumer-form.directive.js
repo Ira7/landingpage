@@ -6,34 +6,59 @@
     /**
      * CostumerForm Object/function
      */
-    function CostumerForm () {
+    function CostumerForm() {
 
-        /***************** PRIVATE *******************/
 
-        /**
-         * Directives link function
-         */
-        function _link(scope, iElem, iAttrs, controllers) {
-            // add logic here
+        function CostumerFormController() {
+
+            var vm = this;
+            vm.name = 'CostumerFormController';
+
+            vm.data = {
+                
+            }
+
+
+            vm.changeState = _changeState;
+
+
+            function _init() {
+
+            }
+
+            _init();
+
         }
-
-        /****************** PUBLIC *******************/
-        var directive = {
-            restrict: 'E',
-            scope: {
-
-            },
-            templateUrl: 'home/directives/costumer-form/costumer-form.directive.html',
-            link: _link
-        };
-
-        return directive;
 
     }
 
+
+    /***************** PRIVATE *******************/
+
+    /**
+     // add logic here
+  
+
+    /****************** PUBLIC *******************/
+    var directive = {
+
+        restrict: 'E',
+        scope: {
+
+        },
+        templateUrl: 'home/directives/costumer-form/costumer-form.directive.html',
+        controller: CostumerFormController,
+        controllerAs: 'vm',
+        bindToController: true
+    };
+
+    return directive;
+
+}
+
     /* ANGULAR */
     angular
-        .module('home')
-        .directive('costumerForm', CostumerForm );
+    .module('home')
+    .directive('costumerForm', CostumerForm);
 
 })();
