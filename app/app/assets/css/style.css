@@ -44,20 +44,29 @@ body{
 }
 
 .heading-text{
-    font-size: 2em;
+    font-size: 1.8em;
     text-align: center;
       /*color: #2aa9e0;*/
       color:white;
+      line-height: 80%;
+}
+
+.clouds{
+    margin-top: 2%;
+     margin-bottom: 1%;
+     z-index: 2;
+     position: relative;
 }
 
 .middle-text{
-     font-size: 1.2em;
-    text-align: center;
+     font-size: 1.5em;
+      text-align: center;
       color:white;
+       line-height: 75%;
 }
 
 .padding-top{
-    padding-top:5%;
+    padding-top:3%;
 }
 
 .prod-logo{
@@ -74,20 +83,16 @@ body{
    border-radius: 1%;
 }
 
-.btn-landing{
-     background: #2aa9e0;
-  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
-  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
-  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
-  background-image: -o-linear-gradient(top, #3498db, #2980b9);
-  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+.btn-landing, btn-landing:hover {
+     background: #1e70b7;
+  margin-top:-1%;
   -webkit-border-radius: 28;
   -moz-border-radius: 28;
   border-radius: 28px;
   font-family: Arial;
-  color: #ffffff;
+  color: #ffffff !important;
   font-size: 20px;
-  padding: 10px 20px 10px 20px;
+  padding: 5px;
   text-decoration: none;
 }
 .page-text{
@@ -105,9 +110,13 @@ body{
 }
 .list-text{
     font-size: 1em;
-    padding: 0.5%;
-    color: #333;
+    padding: 0;
+    color: #363d41;
   
+}
+
+.lists-left{
+    padding-right: 0;
 }
 
 .underline{
@@ -120,24 +129,31 @@ body{
     width: 100%;
 }
 
+
 .label-head{
     font-size: 1.2em;
     font-weight: normal !important;
+    padding-top: 0.5%;
 }
 
 .label-head-center{
-     font-size: 1.3em;
+     font-size: 1.5em;
+     margin-top:2%;
     font-weight: normal !important;
     text-align: center;
-    color: #333;
+    color: #363d41;
+    margin-bottom: 0;
 }
 
-.row.content {height: 1500px;}
+/*.row.content {
+    height: 1500px;
+    }*/
   .sidenav {
       background-color: white;
       /*background-color: rgba(255, 255, 255, 0.25);*/
       height: 100%;
       position: fixed;
+      z-index: 10;
         /*background: url('../imgs/Back960.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -159,6 +175,25 @@ body{
         padding: 15px;
          position:relative;
       }
+
+      .heading-text{
+    font-size: 1.2em;
+    line-height: 100%;
+    margin-top:3%;
+      }
+
+      .middle-text{
+         font-size: 1.2em;  
+         line-height: 75%;
+      }
+
+      .label-head-center{
+ /*font-size: 1.1em;
+    line-height: 100%;*/
+    display:none;
+  
+      }
+
       .row.content {height: auto;}
     }
 
@@ -166,8 +201,46 @@ body{
     margin-bottom: 2% !important;
 }
 
-.costum-color > label > input[type="checkbox"] {
-background-color: red;
-color:green;
+/*.costum-color > label > input[type="checkbox"] {
+    display:inline-block;
+    width:14px;
+    height:14px;
+    border-radius:0 !important;
+    background:blue;
+}*/
+
+
+.cloud1 {
+   z-index:3;
+    position: relative;
+    -webkit-animation: mymove 60s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 60s infinite;
+}
+
+.cloud2 {
+   z-index:1;
+    position: relative;
+    -webkit-animation: mymove 40s infinite; /* Safari 4.0 - 8.0 */
+    animation: mymove 40s infinite;
+}
+/* Safari 4.0 - 8.0 */
+.cloud1 {-webkit-animation-timing-function: linear infinite;}
+.cloud2 {-webkit-animation-timing-function: ease-in-out infinite;}
+
+
+/* Standard syntax */
+.cloud1 {animation-timing-function: linear infinite;}
+.cloud2 {animation-timing-function: ease-in-out infinite;}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+    from {right: 0px;}
+    to {right: 100%;}
+}
+
+/* Standard syntax */
+@keyframes mymove {
+    from {right: 0px;}
+    to {right: 100%;}
 }
 
