@@ -13,28 +13,66 @@
         function CostumerFormController(dataService) {
 
             var vm = this;
+            var services = [];
             vm.name = 'CostumerFormController';
-
             vm.data = {
-                
+                "company": "",
+                "email": "",
+                "firstName": "",
+                "lastName": "",
+                "phone": "",
+                "promo": "",
+                "role": "",
+                "xrm": false,
+                "academy": false,
+                "hybridApp": false,
+                "responsiveApp": false,
+                "makeSense": false
             };
 
+            function _setServices(service) {
+                switch (service) {
+                    case "xrm": vm.data[service] = !vm.data[service];
+                        break;
+                    case "academy": vm.data[service] = !vm.data[service];
+                        break;
+                    case "hybridApp": vm.data[service] = !vm.data[service];
+                        break;
+                    case "responsiveApp": vm.data[service] = !vm.data[service];
+                        break;
+                    case "makeSense": vm.data[service] = !vm.data[service];
+                        break;
+                }
+            }
 
-        function _SentEmail(){
-            var url = '';
-            var data = vm.data;
-            dataService.post(url,data)
-                .then(function(){
-                    console.log('success');
-                    vm.data = {
+            function _SentEmail() {
+                var url = 'http://aviel.com';
+                var data = vm.data;
 
-                    };
-                }, function failure(){
-                    console.log('failure');
-                });
-        }
+                dataService.post(url, data)
+                    .then(function () {
+                        console.log('success');
+                        vm.data = {
+                            "company": "",
+                            "email": "",
+                            "firstName": "",
+                            "lastName": "",
+                            "phone": "",
+                            "promo": "",
+                            "role": "",
+                            "xrm": false,
+                            "academy": false,
+                            "hybridApp": false,
+                            "responsiveApp": false,
+                            "makeSense": false
+                        };
+                    }, function failure() {
+                        console.log('failure');
+                    });
+            }
 
-         vm.submitForm = _SentEmail;
+            vm.submitForm = _SentEmail;
+            vm.setServices = _setServices;
 
 
             function _init() {
@@ -45,30 +83,30 @@
 
         }
 
+
+
+
+        /***************** PRIVATE *******************/
+
+        /**
+         // add logic here
+      
     
+        /****************** PUBLIC *******************/
+        var directive = {
 
+            restrict: 'E',
+            scope: {
 
-    /***************** PRIVATE *******************/
+            },
+            templateUrl: 'home/directives/costumer-form/costumer-form.directive.html',
+            controller: CostumerFormController,
+            controllerAs: 'vm',
+            bindToController: true
+        };
 
-    /**
-     // add logic here
-  
-
-    /****************** PUBLIC *******************/
-    var directive = {
-
-        restrict: 'E',
-        scope: {
-
-        },
-        templateUrl: 'home/directives/costumer-form/costumer-form.directive.html',
-        controller: CostumerFormController,
-        controllerAs: 'vm',
-        bindToController: true
-    };
-
-    return directive;
-   }  
+        return directive;
+    }
 
 
     /* ANGULAR */
