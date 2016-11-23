@@ -19,7 +19,7 @@
 html,
 body {
     height: 100%;
-    font-size: 1em;
+    font-size: 1.1em;
 }
 
 body{
@@ -52,18 +52,13 @@ body{
 }
 
 .clouds{
-    margin-top: 2%;
-     margin-bottom: 1%;
+    margin-top: 5%;
+     margin-bottom: 4%;
      z-index: 2;
      position: relative;
 }
 
-.middle-text{
-     font-size: 1.5em;
-      text-align: center;
-      color:white;
-       line-height: 75%;
-}
+
 
 .padding-top{
     padding-top:3%;
@@ -122,11 +117,16 @@ body{
 .underline{
     height: 30px;
    padding: 0px 3px;
-    font-size: 14px;
+    font-size: 1em;
     line-height: 1.42857143;
     border:none;
     border-bottom: 1px solid #ccc;
     width: 100%;
+}
+
+.checkbox{
+    font-weight: normal !important;
+    padding-right: 15px;
 }
 
 
@@ -138,11 +138,19 @@ body{
 
 .label-head-center{
      font-size: 1.5em;
-     margin-top:2%;
+     margin-top:5%;
     font-weight: normal !important;
     text-align: center;
     color: #363d41;
     margin-bottom: 0;
+}
+
+
+.middle-text{
+     font-size: 1.5em;
+      text-align: center;
+      color:white;
+       line-height: 75%;
 }
 
 /*.row.content {
@@ -187,10 +195,7 @@ body{
     margin-top:3%;
       }
 
-      .middle-text{
-         font-size: 1.2em;  
-         line-height: 75%;
-      }
+      
 
       .label-head-center{
  /*font-size: 1.1em;
@@ -213,6 +218,9 @@ body{
     border-radius:0 !important;
     background:blue;
 }*/
+
+
+
 
 
 .cloud1 {
