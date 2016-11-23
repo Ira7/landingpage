@@ -24,7 +24,7 @@ body {
 
 body{
     font-family: Intelect;
-     background: url('../imgs/Back960.png') no-repeat center center fixed; 
+     background: url('../imgs/Back.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -83,10 +83,6 @@ body{
    border-radius: 1%;
 }
 
-.fist-radio{
-    margin-top: 0 !important;
-}
-
 .btn-landing, btn-landing:hover {
      background: #1e70b7;
   margin-top:-1%;
@@ -100,7 +96,7 @@ body{
   text-decoration: none;
 }
 .page-text{
- background: url('../imgs/Back.png') no-repeat center center fixed; 
+ background: url('../imgs/Back960.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -149,15 +145,14 @@ body{
     margin-bottom: 0;
 }
 
-.row.content {
-    height: 200%;
-    }
+/*.row.content {
+    height: 1500px;
+    }*/
   .sidenav {
       background-color: white;
-      bottom:0;
       /*background-color: rgba(255, 255, 255, 0.25);*/
       height: 100%;
-      position: relative;
+      position: fixed;
       z-index: 10;
         /*background: url('../imgs/Back960.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -173,15 +168,12 @@ body{
       padding: 15px;
     }
 
-     @media screen and (max-height: 800px) {
-.sidenav {
-        /*height: auto;*/
-         position:fixed;
+       @media screen and (max-height: 500px) {
+      .sidenav {
+         position:relative;
       }
-     }
     
     /* On small screens, set height to 'auto' for sidenav and grid */
-
     @media screen and (max-width: 767px) {
       .sidenav {
         height: auto;
@@ -207,8 +199,7 @@ body{
   
       }
 
-      /*.row.content {height: 100%;}*/
-       .row.content {height: auto;}
+      .row.content {height: auto;}
     }
 
     .form-group {
@@ -257,4 +248,3 @@ body{
     from {right: 0px;}
     to {right: 100%;}
 }
-
