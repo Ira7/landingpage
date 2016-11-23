@@ -168,13 +168,13 @@ body{
       padding: 15px;
     }
 
-       @media screen and (max-height: 500px) {
+       /*@media screen and (max-height: 500px),screen and (max-height: 500px){
       .sidenav {
          position:relative;
-      }
+      }*/
     
     /* On small screens, set height to 'auto' for sidenav and grid */
-    @media screen and (max-width: 767px) {
+    @media screen and (max-width: 769px), screen and (max-height: 500px) {
       .sidenav {
         height: auto;
         padding: 15px;
