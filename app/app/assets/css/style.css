@@ -100,7 +100,7 @@ body{
   text-decoration: none;
 }
 .page-text{
- background: url('../imgs/Back960.png') no-repeat center center fixed; 
+ background: url('../imgs/Back.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -149,14 +149,15 @@ body{
     margin-bottom: 0;
 }
 
-/*.row.content {
-    height: 1500px;
-    }*/
+.row.content {
+    height: 100%;
+    }
   .sidenav {
       background-color: white;
+      bottom:0;
       /*background-color: rgba(255, 255, 255, 0.25);*/
       height: 100%;
-      position: fixed;
+      position: relative;
       z-index: 10;
         /*background: url('../imgs/Back960.png') no-repeat center center fixed; 
   -webkit-background-size: cover;
@@ -198,7 +199,8 @@ body{
   
       }
 
-      .row.content {height: auto;}
+      .row.content {height: 100%;}
+       /*.row.content {height: auto;}*/
     }
 
     .form-group {
