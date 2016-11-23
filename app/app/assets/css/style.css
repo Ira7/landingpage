@@ -83,6 +83,10 @@ body{
    border-radius: 1%;
 }
 
+.fist-radio{
+    margin-top: 0 !important;
+}
+
 .btn-landing, btn-landing:hover {
      background: #1e70b7;
   margin-top:-1%;
