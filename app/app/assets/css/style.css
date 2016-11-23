@@ -19,7 +19,7 @@
 html,
 body {
     height: 100%;
-    font-size: 1.1em;
+    font-size: 1em;
 }
 
 body{
@@ -183,6 +183,10 @@ body{
     
     /* On small screens, set height to 'auto' for sidenav and grid */
     @media screen and (max-width: 769px), screen and (max-height: 580px) {
+
+        body{
+             font-size: 1.1em;
+        }
       .sidenav {
         height: auto;
         padding: 15px;
