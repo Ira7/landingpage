@@ -65,7 +65,7 @@
                 <div class="col-xs-12">
                     <div><label class="label-head">נשמח לשמוע ולענות על כל שאלה</label></div>
                 </div>
-                <ng-form name="myForm">
+                <form name="myForm">
 
                     <div class="form-group col-xs-6">
                         <!--<label for="firstName" class="">שם פרטי</label>-->
@@ -137,9 +137,9 @@
 
                     </div>
                     <div class="form-group col-xs-10 col-xs-offset-1">
-                        <button class="btn btn-landing col-xs-12" ng-click="vm.submitForm()">בואו ניפגש</button>
+                        <button ng-disabled="myForm.$invalid" class="btn btn-landing col-xs-12" ng-click="vm.submitForm()">בואו ניפגש</button>
                     </div>
-                </ng-form>
+                <form>
             </div>
         </div>
     </div>
