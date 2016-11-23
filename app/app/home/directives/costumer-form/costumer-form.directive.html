@@ -85,7 +85,7 @@
                     </div>
                     <div class="form-group col-xs-12">
                         <!--<label for="email" class="">כתובת דוא"ל</label>-->
-                        <input ng-model="vm.data.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required type="text" class="underline"
+                        <input ng-model="vm.data.email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required type="email" class="underline"
                             placeholder="כתובת דואר אלקטרוני">
                     </div>
                     <div class="form-group col-xs-12">
@@ -137,7 +137,7 @@
 
                     </div>
                     <div class="form-group col-xs-10 col-xs-offset-1">
-                        <button ng-disabled="myForm.$invalid" class="btn btn-landing col-xs-12" ng-click="vm.submitForm()">בואו ניפגש</button>
+                        <button class="btn btn-landing col-xs-12" ng-click="vm.submitForm()">בואו ניפגש</button>
                     </div>
                 </ng-form>
             </div>
