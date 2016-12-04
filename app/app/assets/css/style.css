@@ -162,6 +162,36 @@ body{
     margin-top:-1%;
 }
 
+.arrow_box {
+	position: relative;
+	background: #ffffff;
+	border: 2px solid #008ed4;
+    height: 40px;
+}
+.arrow_box:after, .arrow_box:before {
+	top: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow_box:after {
+	border-color: rgba(255, 255, 255, 0);
+	border-top-color: #ffffff;
+	border-width: 15px;
+	margin-left: -15px;
+}
+.arrow_box:before {
+	border-color: rgba(0, 142, 212, 0);
+	border-top-color: #008ed4;
+	border-width: 18px;
+	margin-left: -18px;
+}
+
 /*.row.content {
     height: 1500px;
     }*/

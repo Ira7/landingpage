@@ -10,7 +10,7 @@
     function CostumerForm() {
 
 
-        function CostumerFormController(dataService) {
+        function CostumerFormController(dataService, $timeout) {
 
             var vm = this;
             var services = [];
@@ -28,34 +28,52 @@
                 "office": "",
                 "academy": "",
                 "dynamics": "",
-                "digital": ""
+                "digital": "",
+                "approved": ""
             };
+
+            vm.thanksMsg = "תודה!";
+            vm.showMsg = false;
 
 
             function _SentEmail() {
                 var url = 'http://pw-conference-api.azurewebsites.net/sendemail';
                 var data = vm.data;
                 var header = 'Content-Type: application/json';
-
                 dataService.post(url, data, header)
-                    .then(function () {
-                        console.log('success');
-                         vm.data = {
-                "company": "",
-                "email": "",
-                "firstName": "",
-                "lastName": "",
-                "phone": "",
-                "promo": "",
-                "role": "",
-                "azure": "",
-                "cloud": "",
-                "office": "",
-                "academy": "",
-                "dynamics": "",
-                "digital": "",
-                "approved": ""
-            };
+                    .then(function (response) {
+                        if (response && response.status === 200) {
+                            console.log('success');
+                            vm.data = {
+                                "company": "",
+                                "email": "",
+                                "firstName": "",
+                                "lastName": "",
+                                "phone": "",
+                                "promo": "",
+                                "role": "",
+                                "azure": "",
+                                "cloud": "",
+                                "office": "",
+                                "academy": "",
+                                "dynamics": "",
+                                "digital": "",
+                                "approved": ""
+                            };
+                            vm.showMsg = true;
+                            $timeout(function () {
+                                vm.showMsg = false;
+                            }, 3000);
+                        }
+
+                        else {
+   vm.showMsg = true;
+   vm.thanksMsg = "הודעתך לא נשלחה, אנא נסה שוב";
+                            $timeout(function () {
+                                vm.showMsg = false;
+                            }, 3000);
+                        }
+
                     }, function failure() {
                         console.log('failure');
                     });
