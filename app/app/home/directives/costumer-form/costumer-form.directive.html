@@ -12,7 +12,7 @@
                 <p class="heading-text">מצטיינת בפתרונות IT למשרדי ממשלה</p>-->
             </div>
             <div class="row hidden-xs hidden-sm text-center">
-                <p class="label-head-center">פתרונות טכנולוגיים לשימוש מיידי במשרדי ממשלה</p>
+                <p class="label-head-center">פתרונות עסקיים חכמים עבור Dynamics xRM</p>
                 <!--<div class="col-xs-12 col-sm-3 col-sm-offset-3">
                     <ul>
                         <li class="list-text">ניהול ובקרת פרוייקטים</li>
@@ -27,7 +27,7 @@
                 </div>-->
                 <div class="col-md-12">
                     <span>ניהול ובקרת פרוייקטים |</span>
-                    <span> מערכת פניות ציבור |</span>
+                    <span> מערכת פניות של לקוחות |</span>
                     <span>מערכת לניהול משאבי אנוש |</span>
                     <span>מערכת לאישור תיעוד בקשות</span>
                 </div>
@@ -93,46 +93,49 @@
                         <input ng-model="vm.data.phone" name="phone" required type="number" minlength="10" class="underline" placeholder="טלפון נייד">
                     </div>
                     <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs costum-color">
-                        <div><label class="label-head">נשמח לסייע בשירותים הבאים</label></div>
+                        <div><label class="label-head">שירותים</label></div>
 
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.xrm" ng-true-value="'פתרונות xRM מובנים'"  ng-false-value="''">פתרונות xRM מובנים</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.azure" ng-true-value="'פיתוח בסביבת Azure'"  ng-false-value="''">פיתוח בסביבת Azure</label>
 
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.academy" ng-true-value="'xRM Academy'"  ng-false-value="''">xRM Academy</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.cloud" ng-true-value="'העברת מערכות עסקיות לענן'"  ng-false-value="''">העברת מערכות עסקיות לענן</label>
                     </div>
                     
                     <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs">
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.hybridApp" ng-true-value="'אפליקציות היברידיות'"  ng-false-value="''">אפליקציות היברידיות</label>
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.responsiveApp" ng-true-value="'אתר רספונסיבי'"  ng-false-value="''">אתר רספונסיבי</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.office" ng-true-value="'מעבר office 365  לענן'"  ng-false-value="''">מעבר office 365 לענן</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.academy" ng-true-value="'Microsoft Academy'"  ng-false-value="''">Microsoft Academy</label>
                     </div>
                     <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs">
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.makeSense" ng-true-value="'הנגשת האתר Make Sense'"  ng-false-value="''">הנגשת האתר Make Sense</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.dynamics" ng-true-value="'יישום והטמעה של Dynamics 365'"  ng-false-value="''">יישום והטמעה של Dynamics 365</label>
+                         <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.digital" ng-true-value="'פתרונות דיגיטל'"  ng-false-value="''">פתרונות דיגיטל</label>
                     </div>
  <div class="form-group col-xs-12 hidden-lg costum-color">
                         <div><label class="label-head">שירותים</label></div>
 
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.xrm" ng-true-value="'פתרונות xRM מובנים'"  ng-false-value="''">פתרונות xRM מובנים</label>
+                     <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.azure" ng-true-value="'פיתוח בסביבת Azure'"  ng-false-value="''">פיתוח בסביבת Azure</label>
 
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.academy" ng-true-value="'xRM Academy'"  ng-false-value="''">xRM Academy</label>
-                   
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.hybridApp" ng-true-value="'אפליקציות היברידיות'"  ng-false-value="''">אפליקציות היברידיות</label>
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.responsiveApp" ng-true-value="'אתר רספונסיבי'"  ng-false-value="''">אתר רספונסיבי</label>
-                   
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.makeSense" ng-true-value="'הנגשת האתר Make Sense'"  ng-false-value="''">הנגשת האתר Make Sense</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.cloud" ng-true-value="'העברת מערכות עסקיות לענן'"  ng-false-value="''">העברת מערכות עסקיות לענן</label>
+                  
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.office" ng-true-value="'מעבר office 365  לענן'"  ng-false-value="''">מעבר office 365 לענן</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.academy" ng-true-value="'Microsoft Academy'"  ng-false-value="''">Microsoft Academy</label>
+                  
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.dynamics" ng-true-value="'יישום והטמעה של Dynamics 365'"  ng-false-value="''">יישום והטמעה של Dynamics 365</label>
+                         <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.digital" ng-true-value="'פתרונות דיגיטל'"  ng-false-value="''">פתרונות דיגיטל</label>
+                    
                     </div>
 
                     <div class="form-group col-xs-12">
                         <div><label class="label-head">הטבות</label></div>
                         <div class="radio fist-radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="1">פגישה עם ארכיטקט פתרונות XRM </label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="1AzureArchitect">פגישה עם ארכיטקט פתרונות Azure </label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="2">ייעוץ UX/UI (עד 9 שעות) </label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="2AzureExpert">פגישה עם מומחה תשתיות Azure</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="3"> הערכת מצב קיים של מערכות האירגון אל מול פתרונות המובייל</label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="3Evaluation"> הערכת מצב קיים של מערכות האירגון אל מול פתרונות המובייל</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="4"> %15 הנחה על קורסי האקדמיה</label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="4Discount"> %15 הנחה על קורסי האקדמיה</label>
                         </div>
 
                     </div>

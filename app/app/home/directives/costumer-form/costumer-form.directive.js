@@ -23,11 +23,12 @@
                 "phone": "",
                 "promo": "",
                 "role": "",
-                "xrm": "",
+                "azure": "",
+                "cloud": "",
+                "office": "",
                 "academy": "",
-                "hybridApp": "",
-                "responsiveApp": "",
-                "makeSense": ""
+                "dynamics": "",
+                "digital": ""
             };
 
 
@@ -39,20 +40,21 @@
                 dataService.post(url, data, header)
                     .then(function () {
                         console.log('success');
-                        vm.data = {
-                            "company": "",
-                            "email": "",
-                            "firstName": "",
-                            "lastName": "",
-                            "phone": "",
-                            "promo": "",
-                            "role": "",
-                            "xrm": "",
-                            "academy": "",
-                            "hybridApp": "",
-                            "responsiveApp": "",
-                            "makeSense": ""
-                        };
+                         vm.data = {
+                "company": "",
+                "email": "",
+                "firstName": "",
+                "lastName": "",
+                "phone": "",
+                "promo": "",
+                "role": "",
+                "azure": "",
+                "cloud": "",
+                "office": "",
+                "academy": "",
+                "dynamics": "",
+                "digital": ""
+            };
                     }, function failure() {
                         console.log('failure');
                     });
