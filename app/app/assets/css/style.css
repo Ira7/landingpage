@@ -125,6 +125,10 @@ body{
     width: 100%;
 }
 
+
+.grey-font{
+    color:#555;
+}
 .checkbox{
     font-weight: normal !important;
     padding-right: 15px;

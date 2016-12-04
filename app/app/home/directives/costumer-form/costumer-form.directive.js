@@ -53,7 +53,8 @@
                 "office": "",
                 "academy": "",
                 "dynamics": "",
-                "digital": ""
+                "digital": "",
+                "approved": ""
             };
                     }, function failure() {
                         console.log('failure');
