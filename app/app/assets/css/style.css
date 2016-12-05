@@ -162,11 +162,21 @@ body{
     margin-top:-1%;
 }
 
-.arrow_box {
-	position: relative;
-	background: #ffffff;
-	border: 2px solid #008ed4;
-    height: 40px;
+.arrow_box{
+    color: #008ed4;
+    font-size: 1em;
+    font-weight: bolder;
+    padding: 6px;
+    border: 1px solid #008ed4;
+    border-radius: 25px;
+    display: inline-block;
+    position: fixed;
+    bottom: 15%;
+    right: -10%;
+    width: 20%;
+    background-color: white;
+    z-index: 12;
+
 }
 .arrow_box:after, .arrow_box:before {
 	top: 100%;
@@ -182,15 +192,17 @@ body{
 .arrow_box:after {
 	border-color: rgba(255, 255, 255, 0);
 	border-top-color: #ffffff;
-	border-width: 15px;
-	margin-left: -15px;
+	border-width: 6px;
+	margin-left: -6px;
 }
 .arrow_box:before {
 	border-color: rgba(0, 142, 212, 0);
 	border-top-color: #008ed4;
-	border-width: 18px;
-	margin-left: -18px;
+	border-width: 8px;
+	margin-left: -8px;
 }
+
+
 
 /*.row.content {
     height: 1500px;
@@ -253,7 +265,9 @@ margin-top:5%;
     margin-top:3%;
       }
 
-    
+    .arrow_box{
+        width:90%;
+    }
 
       .row.content {height: auto;}
     }
