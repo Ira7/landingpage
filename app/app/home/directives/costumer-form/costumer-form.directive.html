@@ -90,7 +90,7 @@
                     </div>
                     <div class="form-group col-xs-12">
                         <!--<label for="phone" class="">מספר טלפון</label>-->
-                        <input ng-model="vm.data.phone" name="phone" required type="number" minlength="10" class="underline" placeholder="* טלפון נייד (מספרים בלבד)">
+                        <input ng-model="vm.data.phone" name="phone" required type="number" pattern="\d*" minlength="10" class="underline" placeholder="* טלפון נייד (מספרים בלבד)">
                     </div>
                     <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs costum-color">
                         <div><label class="label-head">שירותים</label></div>
@@ -127,23 +127,23 @@
                     <div class="form-group col-xs-12">
                         <div><label class="label-head">הטבות</label></div>
                         <div class="radio fist-radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="1AzureArchitect">פגישה עם ארכיטקט פתרונות Azure </label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="meet Azure Architect">פגישה עם ארכיטקט פתרונות Azure </label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="2AzureExpert">פגישה עם מומחה תשתיות Azure</label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="meet Azure Expert">פגישה עם מומחה תשתיות Azure</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="3Evaluation">פגישה עם מומחה דיגיטל</label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="meet UI/UX Expert">פגישה עם מומחה דיגיטל</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="4Discount"> %15 הנחה על קורסי האקדמיה</label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="accademy Discount"> %15 הנחה על קורסי האקדמיה</label>
                         </div>
 
                     </div>
 
                     <div class="form-group col-xs-12 grey-font">
                         <!--<label class="checkbox-inline"><input name="accept" type="checkbox" class="css-checkbox"  required value="" ng-model="vm.data.approved" ng-true-value="'approved'" ng-false-value="''">אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל בע"מ</label>-->
-                 <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value=""required ng-checked="1" ng-model="vm.data.approved" ng-true-value="1"  ng-false-value="0">אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל בע"מ</label>
+                 <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-checked="'yes'" ng-model="vm.data.approved" ng-true-value="'yes'"  ng-false-value="'no'">אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל בע"מ</label>
                     <!--<label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-checked="'מאשר קבלת חומר פרסומי'" ng-model="vm.data.approved" ng-true-value="'מאשר/ת קבלת חומר פרסומי'"  ng-false-value="''" >אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל</label>-->
                     </div>
 

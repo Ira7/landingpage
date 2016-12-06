@@ -29,7 +29,7 @@
                 "academy": "",
                 "dynamics": "",
                 "digital": "",
-                "approved": 1
+                "approved": "yes"
             };
 
             vm.thanksMsg = "תודה!";
@@ -58,7 +58,7 @@
                                 "academy": "",
                                 "dynamics": "",
                                 "digital": "",
-                                "approved": 1
+                                "approved": "yes"
                             };
                             vm.showMsg = true;
                             $timeout(function () {
