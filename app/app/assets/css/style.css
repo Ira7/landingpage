@@ -58,7 +58,9 @@ body{
      position: relative;
 }
 
-
+.no-margin-top{
+    margin-top:0 !important;
+}
 
 .padding-top{
     padding-top:3%;
@@ -116,7 +118,7 @@ body{
 
 .underline, .underline:focus{
     outline: none !important;
-    height: 30px;
+    height: 28px;
    padding: 0px 3px;
     font-size: 1em;
     line-height: 1.42857143;
