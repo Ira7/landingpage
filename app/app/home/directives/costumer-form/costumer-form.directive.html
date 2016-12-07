@@ -89,10 +89,12 @@
                             placeholder="* כתובת דואר אלקטרוני">
                     </div>
                     <div class="form-group col-xs-12">
-                        <input ng-model="vm.data.phone" ng-class="{'invalid':myForm.phone.$invalid && myForm.phone.$touched}" name="phone" required type="number" pattern="^05[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" minlength="10"  maxlength="10" class="underline" placeholder="* טלפון נייד">
+                        <input ng-model="vm.data.phone" ng-class="{'invalid':myForm.phone.$invalid && myForm.phone.$touched && vm.data.phone.length!==0 ||myForm.phone.$viewValue!==null}" name="phone" required type="number" pattern="^05[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" minlength="10"  maxlength="10" class="underline" placeholder="* טלפון נייד">
                      <div class="row margin-bottom-5">
-                     <label for="phone" class="invalid-content" ng-if="myForm.phone.$invalid && myForm.phone.$touched">אנא בדוק את המספר: מספרים בלבד, 10 תוים</label>
+                     <label for="phone" class="invalid-content" ng-if="myForm.phone.$invalid && myForm.phone.$touched" ng-hide="myForm.phone.$valid ||myForm.phone.$viewValue==='' || vm.data.phone===null">אנא בדוק את המספר: מספרים בלבד, 10 תוים</label>
                     </div>
+                    <!--<pre dir="ltr">{{myForm.phone | json }}</pre>
+                    <pre dir="ltr">{{vm.data.phone | json }}</pre>-->
                     </div>
                     <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs costum-color">
                         <div><label class="label-head">שירותים</label></div>
@@ -140,7 +142,9 @@
                         <div class="radio">
                             <label><input type="radio" ng-model="vm.data.promo" value="accademy Discount"> %15 הנחה על קורסי האקדמיה</label>
                         </div>
-
+ <div class="radio">
+                            <label><input type="radio" ng-model="vm.data.promo" value="Dynamic 365 consulting">ייעוץ Dynamics 365</label>
+                        </div>
                     </div>
 
                     <div class="form-group col-xs-12 grey-font">

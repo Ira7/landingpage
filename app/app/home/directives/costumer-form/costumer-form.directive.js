@@ -10,7 +10,7 @@
     function CostumerForm() {
 
 
-        function CostumerFormController(dataService, $timeout) {
+        function CostumerFormController(dataService, $timeout, $scope) {
 
             var vm = this;
             var services = [];
@@ -20,7 +20,7 @@
                 "email": "",
                 "firstName": "",
                 "lastName": "",
-                "phone": "",
+                "phone": null,
                 "promo": "",
                 "role": "",
                 "azure": "",
@@ -34,7 +34,17 @@
 
             vm.thanksMsg = "תודה!";
             vm.showMsg = false;
+            vm.validNumber = true;
 
+
+            // function _checkNumber() {
+            //     if (vm.data.phone !== null && $scope.myForm.phone.$invalid && $scope.myForm.phone.$touched) {
+            //         vm.validNumber = false;
+            //     }
+            //     else {
+            //         vm.validNumber = true;
+            //     }
+            // }
 
             function _SentEmail() {
                 var url = 'http://pw-conference-api.azurewebsites.net/sendemail';
@@ -49,7 +59,7 @@
                                 "email": "",
                                 "firstName": "",
                                 "lastName": "",
-                                "phone": "",
+                                "phone": null,
                                 "promo": "",
                                 "role": "",
                                 "azure": "",
@@ -67,8 +77,8 @@
                         }
 
                         else {
-   vm.showMsg = true;
-   vm.thanksMsg = "הודעתך לא נשלחה, אנא נסה שוב";
+                            vm.showMsg = true;
+                            vm.thanksMsg = "הודעתך לא נשלחה, אנא נסה שוב";
                             $timeout(function () {
                                 vm.showMsg = false;
                             }, 3000);
@@ -80,7 +90,7 @@
             }
 
             vm.submitForm = _SentEmail;
-
+         
 
             function _init() {
 

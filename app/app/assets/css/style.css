@@ -70,7 +70,7 @@ body{
 }
 
 .form-wrapper{
-  padding-top:5%;
+  /*padding-top:3%;*/
   /*background-color: #2aa9e0;*/
   margin: 2%;
    background-color:rgba(255, 255, 255, 0.66);
@@ -100,9 +100,9 @@ body{
    float: left;
 }
 
-.prod-logo{
+/*.prod-logo{
     padding: 2%;
-}
+}*/
 .list-text{
     font-size: 1em;
     padding: 0;
@@ -138,7 +138,7 @@ body{
 }
 
 .margin-bottom-5{
-    margin-bottom: 5px;
+    margin-bottom:3px;
 }
 
 .invalid-content{
@@ -161,6 +161,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 .grey-font{
     color:#555;
+    margin-top:-3%;
 }
 .checkbox{
     font-weight: normal !important;
@@ -234,7 +235,6 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	border-width: 8px;
 	margin-left: -8px;
 }
-
 
 
 /*.row.content {
