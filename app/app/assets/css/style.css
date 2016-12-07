@@ -62,6 +62,10 @@ body{
     margin-top:0 !important;
 }
 
+.top10{
+    margin-top:-2%;
+}
+
 .padding-top{
     padding-top:3%;
 }
@@ -89,7 +93,7 @@ body{
   font-family: Arial;
   color: #ffffff !important;
   font-size: 20px;
-  padding: 5px;
+  padding: 3px;
   text-decoration: none;
 }
 .page-text{
