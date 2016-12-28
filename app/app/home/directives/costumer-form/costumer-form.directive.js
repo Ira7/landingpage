@@ -10,93 +10,161 @@
     function CostumerForm() {
 
 
-        function CostumerFormController(dataService, $timeout, $scope) {
+        function CostumerFormController(dataService, $timeout, $scope, $log) {
 
             var vm = this;
             var services = [];
             vm.name = 'CostumerFormController';
             vm.data = {
-                "company": "",
-                "email": "",
-                "firstName": "",
-                "lastName": "",
-                "phone": null,
-                "promo": "",
-                "role": "",
-                "azure": "",
-                "cloud": "",
-                "office": "",
-                "academy": "",
-                "dynamics": "",
-                "digital": "",
-                "approved": "yes"
+                sitename: "prodware conference",
+                sitelocale: "he",
+                siteurl: "http://xrm.prodware.co.il",
+                siteip: "http://xrm.prodware.co.il",
+                firstname: null,
+                lastname: null,
+                company: null,
+                role: null,
+                phone: null,
+                email: null,
+                selectionService: [],
+                otherservice: null,
+                promo: null,
+                approvemailing: 'true'
             };
 
             vm.thanksMsg = "תודה!";
             vm.showMsg = false;
             vm.validNumber = true;
+            vm.showother = false;
 
 
-            // function _checkNumber() {
-            //     if (vm.data.phone !== null && $scope.myForm.phone.$invalid && $scope.myForm.phone.$touched) {
-            //         vm.validNumber = false;
-            //     }
-            //     else {
-            //         vm.validNumber = true;
-            //     }
-            // }
+            // services
+            vm.services = ['מערכת פניות ציבור',
+                'מערכת פניות חירום',
+                'ניהול וועדות/החלטות',
+                'ניהול פרויקטים',
+                'ניהול משאבי אנוש',
+                'אחר'];
 
-            function _SentEmail() {
-                var url = 'http://pw-conference-api.azurewebsites.net/sendemail';
-                var data = vm.data;
-                var header = 'Content-Type: application/json';
-                dataService.post(url, data, header)
-                    .then(function (response) {
-                        if (response && response.status === 200) {
-                            console.log('success');
-                            vm.data = {
-                                "company": "",
-                                "email": "",
-                                "firstName": "",
-                                "lastName": "",
-                                "phone": null,
-                                "promo": "",
-                                "role": "",
-                                "azure": "",
-                                "cloud": "",
-                                "office": "",
-                                "academy": "",
-                                "dynamics": "",
-                                "digital": "",
-                                "approved": "yes"
-                            };
-                            vm.showMsg = true;
-                            $timeout(function () {
-                                vm.showMsg = false;
-                            }, 3000);
-                        }
 
-                        else {
-                            vm.showMsg = true;
-                            vm.thanksMsg = "הודעתך לא נשלחה, אנא נסה שוב";
-                            $timeout(function () {
-                                vm.showMsg = false;
-                            }, 3000);
-                        }
 
-                    }, function failure() {
-                        console.log('failure');
-                    });
+            function _toggleService(service) {
+                var idx = vm.data.selectionService.indexOf(service);
+                // is currently selected
+                if (idx > -1) {
+                    vm.data.selectionService.splice(idx, 1);
+                }
+                // is newly selected
+                else {
+                    vm.data.selectionService.push(service);
+                }
+                if (vm.data.selectionService.length === 0) {
+                    vm.showother = false;
+                }
+                for (var i = 0; i < vm.data.selectionService.length; i++) {
+                    if (vm.data.selectionService[i] === 'אחר' && vm.data.selectionService.length !== 0) {
+                        vm.showother = true;
+                        break;
+                    }
+
+                    else {
+                        vm.showother = false;
+                    }
+                }
+            }
+            function _cleanModel() {
+                vm.data = {
+                    sitename: "prodware conference",
+                    sitelocale: "he",
+                    siteurl: "http://xrm.prodware.co.il",
+                    siteip: "http://xrm.prodware.co.il",
+                    firstname: null,
+                    lastname: null,
+                    company: null,
+                    role: null,
+                    phone: null,
+                    email: null,
+                    selectionService: [],
+                    otherservice: null,
+                    promo: null,
+                    approvemailing: 'true'
+                };
+
+                vm.showother = false;
+
             }
 
-            vm.submitForm = _SentEmail;
-         
+
+            function buildMessage(selectionService) {
+
+                var message = "Hello my name is " + vm.data.firstname + " I am " + vm.data.role + " from " + vm.data.company;
+                if (vm.data.promo && vm.data.promo !== "") {
+                    message += "I would like promotion form your organization: " + vm.data.promo;
+                }
+                if (selectionService.length > 0) {
+                    message += "I am interested in ";
+                    message += selectionService.join();
+                    if (vm.data.otherservice !== null) {
+                        message += vm.data.otherservice;
+                    }
+                }
+                else {
+                    message += "I want some advice for my organization.";
+                }
+
+                return message;
+            }
+
+
+
+            function _sendToBackend(props) {
+
+                var message = buildMessage(vm.data.selectionService);
+                var data = vm.data;
+                var requestData = {
+                    sitename: data.sitename.toString(),
+                    sitelocale: data.sitelocale.toString(),
+                    siteurl: data.siteurl.toString(),
+                    siteip: data.siteip.toString(),
+                    firstname: data.firstname.toString(),
+                    lastname: data.lastname.toString(),
+                    email: data.email.toString(),
+                    phone: data.phone.toString(),
+                    message: message.toString(),
+                    approvemailing: data.approvemailing.toString()
+                };
+
+                dataService.post('http://notify365.azurewebsites.net/forms', requestData).then(function (response) {
+                    $log.debug("response", response);
+                    vm.showMsg = true;
+                    $timeout(function () {
+                        vm.showMsg = false;
+                    }, 3000);
+
+                    _cleanModel();
+
+                }, function failure(err) {
+                    $log.debug("error", err);
+                    vm.showMsg = true;
+                    vm.thanksMsg = "הודעתך לא נשלחה, אנא נסה שוב";
+                    $timeout(function () {
+                        vm.showMsg = false;
+                    }, 3000);
+                });
+            }
+
+            vm.submitForm = _sendToBackend;
+
 
             function _init() {
 
             }
 
+
             _init();
+
+
+            vm.toggleService = _toggleService;
 
         }
 
@@ -131,3 +199,4 @@
         .directive('costumerForm', CostumerForm);
 
 })();
+

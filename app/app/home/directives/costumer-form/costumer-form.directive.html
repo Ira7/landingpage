@@ -7,12 +7,12 @@
                 </div>
             </div>-->
             <div class="row padding-top">
-                <p class="heading-text">Prodware שותפת הזהב של Microsoft מצטיינת בפתרונות IT בענן</p>
+                <p class="heading-text">Prodware שותפת הזהב של Microsoft מצטיינת בפתרונות IT לרשויות מקומיות</p>
                 <!--<p class="heading-text">Prodware שותפת הזהב של Microsofrt</p>
                 <p class="heading-text">מצטיינת בפתרונות IT למשרדי ממשלה</p>-->
             </div>
             <div class="row hidden-xs hidden-sm text-center">
-                <p class="label-head-center">פתרונות עסקיים חכמים ועבודה בענן</p>
+                <p class="label-head-center">פתרונות עסקיים לערים חכמות</p>
                 <!--<div class="col-xs-12 col-sm-3 col-sm-offset-3">
                     <ul>
                         <li class="list-text">ניהול ובקרת פרוייקטים</li>
@@ -27,17 +27,14 @@
                 </div>-->
                 <div class="col-md-12">
                     <span>פתרונות דיגיטל |</span>
-                    <span> פתרונת xRM מובנים |</span>
+                    <span> פתרונת xRM |</span>
                     <span>מעבר לסביבת ענן |</span>
-                     <span>Dynamics 365 </span>
+                    <span>Dynamics 365 </span>
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-xs-12">
-                    <!--<div class="col-xs-2 pull-right cloud1"><img src=".\assets\imgs\cloud1.png" class="img-responsive"></div>
-                  
-                 <div class="col-xs-1 pull-right cloud2"><img src=".\assets\imgs\cloud2.png" class="img-responsive"></div>-->
                     <div class="col-xs-8 col-xs-offset-2 clouds">
                         <img src=".\assets\imgs\clouds.png" class="img-responsive clouds" alt="img">
                     </div>
@@ -62,17 +59,18 @@
                 </div>
             </div>
             <div class="row form-wrapper">
-                <div class="col-xs-12">
+                <div class="col-xs-12 nopadding">
                     <div><label class="label-head">נשמח לשמוע ולענות על כל שאלה</label></div>
                 </div>
                 <form name="myForm">
+                    <div class="row">
                     <div class="form-group col-xs-6">
                         <!--<label for="firstName" class="">שם פרטי</label>-->
-                        <input ng-model="vm.data.firstName" name="firstName" required type="text" class="underline" placeholder="* שם פרטי">
+                        <input ng-model="vm.data.firstname" name="firstName" required type="text" class="underline" placeholder="* שם פרטי">
                     </div>
                     <div class="form-group col-xs-6">
                         <!--<label for="lastName" class="">שם משפחה</label>-->
-                        <input ng-model="vm.data.lastName" name="lastName" required type="text" class="underline" placeholder="* שם משפחה">
+                        <input ng-model="vm.data.lastname" name="lastName" required type="text" class="underline" placeholder="* שם משפחה">
                     </div>
                     <div class="form-group col-xs-6">
                         <!--<label for="company" class="">חברה</label>-->
@@ -84,85 +82,84 @@
                     </div>
                     <div class="form-group col-xs-12">
                         <!--<label for="email" class="">כתובת דוא"ל</label>-->
-                        <input ng-model="vm.data.email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-zA-Z]{2,3})$" required type="email" class="underline"
-                            placeholder="* כתובת דואר אלקטרוני">
+                        <input ng-model="vm.data.email" name="email" pattern="^([a-zA-Z0-9_\-\.]+)@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-zA-Z]{2,3})$" required
+                            type="email" class="underline" placeholder="* כתובת דואר אלקטרוני">
                     </div>
                     <div class="form-group col-xs-12">
-                        <input ng-model="vm.data.phone" ng-class="{'invalid':myForm.phone.$invalid && myForm.phone.$touched && vm.data.phone.length!==0 ||myForm.phone.$viewValue!==null}" name="phone" required type="number" pattern="^05[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" minlength="10"  maxlength="10" class="underline" placeholder="* טלפון נייד">
-                     <div class="row margin-bottom-5">
-                     <label for="phone" class="invalid-content" ng-if="myForm.phone.$invalid && myForm.phone.$touched" ng-hide="myForm.phone.$valid ||myForm.phone.$viewValue==='' || vm.data.phone===null">אנא בדוק את המספר: מספרים בלבד, 10 תוים</label>
+                        <input ng-model="vm.data.phone" ng-class="{'invalid':myForm.phone.$invalid && myForm.phone.$touched && vm.data.phone.length!==0 ||myForm.phone.$viewValue!==null}"
+                            name="phone" required type="number" pattern="^05[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]" minlength="10"
+                            maxlength="10" class="underline" placeholder="* טלפון נייד">
+                        <div class="row margin-bottom-5">
+                            <label for="phone" class="invalid-content" ng-if="myForm.phone.$invalid && myForm.phone.$touched" ng-hide="myForm.phone.$valid ||myForm.phone.$viewValue==='' || vm.data.phone===null">אנא בדוק את המספר: מספרים בלבד, 10 תוים</label>
+                        </div>
                     </div>
-                    <!--<pre dir="ltr">{{myForm.phone | json }}</pre>
-                    <pre dir="ltr">{{vm.data.phone | json }}</pre>-->
+</div>
+
+                    <div class="row">
+                       <div class="col-xs-12"> 
+                        <label class="label-head">שירותים</label>
+                        </div>
+                        </div>
+<div class="row">
+                    <div class="form-group col-lg-12">
+                        <div class="col-md-6 col-xs-12 nopadding" ng-repeat="service in vm.services">
+                            <label class="checkbox-inline">
+                        <input
+                            class="css-checkbox"
+                            type="checkbox"
+                            name="selectedService[]"
+                            value="{{service}}"
+                            ng-checked="vm.data.selectionService.indexOf(service) > -1"
+                            ng-click="vm.toggleService(service)">{{service}}
+                        </label>
+                        </div>
                     </div>
-                    <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs costum-color">
-                        <div><label class="label-head">שירותים</label></div>
-
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.azure" ng-true-value="'פיתוח בסביבת Azure'"  ng-false-value="''">פיתוח בסביבת Azure</label>
-
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.cloud" ng-true-value="'העברת מערכות עסקיות לענן'"  ng-false-value="''">העברת מערכות עסקיות לענן</label>
-                    </div>
-
-                    <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs">
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.office" ng-true-value="'מעבר office 365  לענן'"  ng-false-value="''">מעבר office 365 לענן</label>
-                         <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.digital" ng-true-value="'פתרונות דיגיטל'"  ng-false-value="''">פתרונות דיגיטל לעסקים</label>
-                    </div>
-                    <div class="form-group col-lg-12 hidden-md hidden-sm hidden-xs">
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.dynamics" ng-true-value="'יישום של Dynamics 365'"  ng-false-value="''">יישום של Dynamics 365</label>
-                      <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.academy" ng-true-value="'Microsoft Academy'"  ng-false-value="''">Microsoft Academy</label>
-                       
-                    </div>
-                    <div class="form-group col-xs-12 hidden-lg costum-color">
-                        <div><label class="label-head">שירותים</label></div>
-
-                        <label class="checkbox no-margin-top"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.azure" ng-true-value="'פיתוח בסביבת Azure'"  ng-false-value="''">פיתוח בסביבת Azure</label>
-
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.cloud" ng-true-value="'העברת מערכות עסקיות לענן'"  ng-false-value="''">העברת מערכות עסקיות לענן</label>
-
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.office" ng-true-value="'מעבר office 365  לענן'"  ng-false-value="''">מעבר office 365 לענן</label>
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.academy" ng-true-value="'Microsoft Academy'"  ng-false-value="''">Microsoft Academy</label>
-
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.dynamics" ng-true-value="'יישום של Dynamics 365'"  ng-false-value="''">יישום של Dynamics 365</label>
-                        <label class="checkbox"><input type="checkbox" class="css-checkbox" value="" ng-model="vm.data.digital" ng-true-value="'פתרונות דיגיטל'"  ng-false-value="''">פתרונות דיגיטל</label>
-
-                    </div>
-
-                    <div class="form-group col-xs-12 top10">
-                        <div><label class="label-head">הטבות</label></div>
-                        <div class="radio fist-radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="meet Azure Architect">פגישה עם ארכיטקט פתרונות Azure </label>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <div class="invisible" ng-show="!vm.showother">0</div>
+        <input ng-model="vm.data.otherservice" type="text" ng-show="vm.showother" class="underline" placeholder="אנא פרט">
+    </div>
+</div>
+                    <div class="row">
+                        <div class="col-xs-12">
+                        <label class="label-head">הטבות</label>
+                        </div>
+                        </div>
+                    <div class="form-group col-xs-12 nopadding top10">
+                        <div class="radio">
+                            <label><input type="radio" ng-model="vm.data.promo" value="Dynamic 365 consulting">ייעוץ Dynamics 365</label>
                         </div>
                         <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="meet Azure Expert">פגישה עם מומחה תשתיות Azure</label>
+                            <label><input type="radio" ng-model="vm.data.promo" value="round tabel">הזמנה לשולחן עגול בנושא פתרונות חכמים</label>
                         </div>
+                        <!--<div class="radio">
+                            <label><input type="radio" ng-model="vm.data.promo" value="meet Azure Expert">פגישה עם מומחה תשתיות Azure</label>
+                        </div>-->
                         <div class="radio">
                             <label><input type="radio" ng-model="vm.data.promo" value="meet UI/UX Expert">פגישה עם מומחה דיגיטל</label>
                         </div>
                         <div class="radio">
                             <label><input type="radio" ng-model="vm.data.promo" value="accademy Discount"> %15 הנחה על קורסי האקדמיה</label>
                         </div>
- <div class="radio">
-                            <label><input type="radio" ng-model="vm.data.promo" value="Dynamic 365 consulting">ייעוץ Dynamics 365</label>
-                        </div>
                     </div>
 
-                    <div class="form-group col-xs-12 grey-font">
-                        <!--<label class="checkbox-inline"><input name="accept" type="checkbox" class="css-checkbox"  required value="" ng-model="vm.data.approved" ng-true-value="'approved'" ng-false-value="''">אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל בע"מ</label>-->
-                 <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-checked="'yes'" ng-model="vm.data.approved" ng-true-value="'yes'"  ng-false-value="'no'">אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל בע"מ</label>
-                    <!--<label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-checked="'מאשר קבלת חומר פרסומי'" ng-model="vm.data.approved" ng-true-value="'מאשר/ת קבלת חומר פרסומי'"  ng-false-value="''" >אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל</label>-->
+                    <div class="form-group col-xs-12 grey-font nopadding">
+
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-checked="'true'" ng-model="vm.data.approved" ng-true-value="'true'"  ng-false-value="'false'">אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל בע"מ</label>
+
                     </div>
 
+                    <div class="col-xs-8 col-xs-offset-2 text-center arrow_box" ng-if="vm.showMsg">
+                        {{vm.thanksMsg}}
+                    </div>
 
-                        <!--<pre dir="ltr" >{{vm.data | json }}</pre>-->
-                   
-                        <div class="col-xs-8 col-xs-offset-2 text-center arrow_box" ng-if="vm.showMsg">
-                                {{vm.thanksMsg}}
-                        </div>
-                
                     <div class="form-group col-xs-10 col-xs-offset-1">
                         <button ng-disabled="myForm.$invalid" class="btn btn-landing col-xs-12" ng-click="vm.submitForm()">בואו ניפגש</button>
                     </div>
-                    </form>
+
+
+                </form>
             </div>
         </div>
     </div>

@@ -1,0 +1,7 @@
+
+loggingEnabled: true
+devErrorsEnabled: true
+logDirectory: iisnode
+debuggerExtensionDll: iisnode-inspector.dll
+debuggingEnabled: true
+

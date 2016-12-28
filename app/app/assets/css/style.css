@@ -69,10 +69,17 @@ body{
 .padding-top{
     padding-top:3%;
 }
+.padding-right-15{
+    padding-right:15px;
+}
 
 .prod-logo{
    height: 30px;
     width: 140px;
+}
+
+.invisible{
+    color: white;
 }
 
 .form-wrapper{
@@ -198,11 +205,9 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
        line-height: 75%;
 }
 
-.fist-radio{
-    margin-top:-1%;
-}
 
 .arrow_box{
+    max-width: 300px;
     color: #008ed4;
     font-size: 1em;
     font-weight: bolder;

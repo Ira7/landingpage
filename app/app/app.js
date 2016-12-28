@@ -1,7 +1,7 @@
 (function () {
     'use strict';
 
-    angular.module('app', ['common', 'shell', 'home', 'help', 'auth', 'nav', 'sidenav']);
+    angular.module('app', ['common', 'shell', 'home', 'help',  'nav', 'sidenav']);
 
     // CONFIG: App (module)
     angular
@@ -37,8 +37,8 @@
                 .setStorageType('sessionStorage')
                 .setNotify(true, true);
 
-            /* add Authentication Interceptor */
-            $httpProvider.interceptors.push('authInterceptor');
+            // /* add Authentication Interceptor */
+            // $httpProvider.interceptors.push('authInterceptor');
 
         });
 
