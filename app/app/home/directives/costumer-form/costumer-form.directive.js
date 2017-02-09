@@ -36,6 +36,7 @@
             vm.showMsg = false;
             vm.validNumber = true;
             vm.showother = false;
+            vm.showAgree = false;
 
 
             // services
@@ -115,7 +116,9 @@
                 return message;
             }
 
-
+function _agree(){
+    vm.showAgree = ! vm.showAgree;
+}
 
             function _sendToBackend(props) {
 
@@ -165,6 +168,7 @@
 
 
             vm.toggleService = _toggleService;
+            vm.agree = _agree;
 
         }
 

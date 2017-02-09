@@ -46,6 +46,7 @@
                 <p class="middle-text">הדרכות יישום, פיתוח ומגוון פתרונות</p>
                 <p class="middle-text">Dynamics 365 xRM, Power BI, Angular 2.0, Azure</p>
             </div>
+            
             <!--<div class="row">
                 <img src=".\assets\imgs\desk500.png" class="img-responsive pull-left logo-img" alt="logo">
             </div>-->
@@ -143,10 +144,16 @@
                             <label><input type="radio" ng-model="vm.data.promo" value="accademy Discount"> %15 הנחה על קורסי האקדמיה</label>
                         </div>
                     </div>
+                    
+ <div class="col-xs-8 col-xs-offset-2 text-center arrow_box agree-box" ng-if="vm.showAgree">
+     <button ng-click="vm.agree()" class="close-btn">X</button>
+     <div class="col-xs-12">
+                      מידע זה יוזן למאגר מידע ממוחשב שמספרו 517695 ולמאגרי מידע של מיקרוסופט בחו”ל. לא חלה עליך חובה חוקית למסור לנו את המידע ומסירתו היא לפי רצונך והסכמתך בלבד. המידע שיתקבל ממך עשוי לשמש למטרות שיווק כולל למשלוח פרסומת באמצעות email ,SMS, פקס וטלפון וכן למטרות דיוור ישיר,השתתפות בסקרים ושירותים נוספים. אנו עשויים להיעזר בצדדים שלישיים לצורך יישום מטרות אלו, וכן להוסיף על המידע פרטים ממקורות אחרים, מיקרוסופט ישראל מתחייבת לא לסחור במידע האישי שלך.. דיוורים אלה יישלחו בהתאם להוראות חוקים זרים, ולא לפי החוק הישראלי. ידוע לי כי אם נתתי בעבר את הסכמתי לקבלת דיוורים במסגרת רישום לשירותי ,Live ID רישום לפורומים או במקרים דומים אמשיך לקבל דיוורים בהתאם להסכמתי אלא אם כן אבקש להסיר את שמי מרשימת הדיוור
+                    </div>
+                    </div>
+                    <div class="form-group col-xs-12 grey-font nopadding agreement">
 
-                    <div class="form-group col-xs-12 grey-font nopadding">
-
-                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-checked="'true'" ng-model="vm.data.approved" ng-true-value="'true'"  ng-false-value="'false'">אני מאשר/ת קבלת חומר פרסומי מאת פרודוור ישראל בע"מ</label>
+                        <label class="checkbox-inline"><input type="checkbox" class="css-checkbox" value="" ng-checked="'true'" ng-model="vm.data.approved" ng-true-value="'true'"  ng-false-value="'false'">אני מסכים לקבל מידע שיווקי, הצעות כדאיות, ופרסומות ממיקרוסופט ישראל וכן ממיקרוסופט העולמית לרבות נציגותיה בעולם על מוצרים, שירותים, אירועים, עדכונים, טיפים והצעות אקסלוסיביות. <a class="" ng-click="vm.agree()">...קרא עוד</a></label>
 
                     </div>
 
@@ -157,7 +164,6 @@
                     <div class="form-group col-xs-10 col-xs-offset-1">
                         <button ng-disabled="myForm.$invalid" class="btn btn-landing col-xs-12" ng-click="vm.submitForm()">בואו ניפגש</button>
                     </div>
-
 
                 </form>
             </div>
