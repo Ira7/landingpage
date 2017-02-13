@@ -29,7 +29,7 @@
                 selectionService: [],
                 otherservice: null,
                 promo: null,
-                approvemailing: 'true'
+                approvemailing: null
             };
 
             vm.thanksMsg = "תודה!";
@@ -88,7 +88,7 @@
                     selectionService: [],
                     otherservice: null,
                     promo: null,
-                    approvemailing: 'true'
+                    approvemailing: null
                 };
 
                 vm.showother = false;
