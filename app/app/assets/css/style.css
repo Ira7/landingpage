@@ -44,7 +44,7 @@ body{
 }
 
 .heading-text{
-    font-size: 1.8em;
+    font-size: 1.2em;
     text-align: center;
       /*color: #2aa9e0;*/
       color:white;
@@ -52,8 +52,6 @@ body{
 }
 
 .clouds{
-    margin-top: 3%;
-     /*margin-bottom: 3%;*/
      z-index: 2;
      position: relative;
 }
@@ -67,7 +65,7 @@ body{
 }
 
 .padding-top{
-    padding-top:3%;
+    padding-top:1%;
 }
 .padding-right-15{
     padding-right:15px;
@@ -199,10 +197,18 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 
 .middle-text{
-     font-size: 1.1em;
+     font-size: 1em;
       text-align: center;
       color:white;
        line-height: 75%;
+}
+
+.options-text{
+     font-size: 1em;
+      text-align: center;
+      color:#333;
+       line-height: 75%;
+       margin-top:3%;
 }
 
 .close-btn{
@@ -320,7 +326,7 @@ margin-top:5%;
       }
 
       .heading-text{
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 100%;
     margin-top:3%;
       }
