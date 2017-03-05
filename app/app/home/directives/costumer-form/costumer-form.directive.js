@@ -16,7 +16,7 @@
             var services = [];
             vm.name = 'CostumerFormController';
             vm.data = {
-                sitename: "prodware conference",
+                sitename: "Envision conference",
                 sitelocale: "he",
                 siteurl: "http://xrm.prodware.co.il",
                 siteip: "http://xrm.prodware.co.il",
@@ -40,14 +40,13 @@
 
 
             // services
-            vm.services = ['מערכת פיננסית',
-                'מערכת לוגיסטית',
-                'ייצור',
-                'ריטייל',
-                'נדל"ן',
-                'רכב',
-                'CRM',
-                'Power BI',
+            vm.services = ['מכירות',
+                'שיווק',
+                'שירות לקוחות',
+                'ניהול פרויקטים',
+                'מודול טכנאים',
+                'פיננסי',
+                'CRM פורטל (ADX Studio)',
                 'Prodware Academy',
                 'אחר'];
 
@@ -79,7 +78,7 @@
             }
             function _cleanModel() {
                 vm.data = {
-                    sitename: "prodware conference",
+                    sitename: "Envision conference",
                     sitelocale: "he",
                     siteurl: "http://xrm.prodware.co.il",
                     siteip: "http://xrm.prodware.co.il",
